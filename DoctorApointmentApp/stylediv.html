@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+Normally div elements will be displayed on top of each other. However, if we use float: left we can let elements float next to each other:
+
+The float property can have one of the following values:
+
+left - The element floats to the left of its container
+right - The element floats to the right of its container
+none - The element does not float (will be displayed just where it occurs in the text). This is default
+inherit - The element inherits the float value of its parent
+
+The clear property can have one of the following values:
+
+none - The element is not pushed below left or right floated elements. This is default
+left - The element is pushed below left floated elements
+right - The element is pushed below right floated elements
+both - The element is pushed below both left and right floated elements
+inherit - The element inherits the clear value from its parent
+
+-->
+<style>
+div.a {
+  width: auto;
+  border: 1px solid black;
+}
+
+div.b {
+  width: 150px;
+  border: 1px solid black;  
+}
+
+div.c {
+  width: 50%;
+  border: 1px solid black;  
+}
+
+.thrid{
+    width: 30%;
+    border: 1px solid black;  
+    float: left;
+
+}
+.clear{
+    width: 30%;
+    border: 1px solid black;  
+    clear: left;
+}
+
+</style>
+</head>
+<body>
+
+<div>
+<div><div class="thrid">1</div><div class="thrid">2</div><div class="thrid">3<div></div></div></div>
+<div><div class="clear">4</div><div>5</div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+Admin login 
+Admin add a doctor 
+Admin find the doctor 
+GET doctors/?name=XX
+Admin add appoinements 
+
+
+User logs in 
+search for a doctor 
+GET doctors/?name=XX
+
+get 5 open appointments 
+GET appointments/?booked=true - all appointments 
+
+select the appoinement 
+enter information 
+PATCH appointments/<appointment-id>/
+
+Save, pay, and get a confirmation 
+print QR code 
+
+Show the QR code in hosipital 
+doctor scan the QR code 
+doctor add a prescription 
+doctor mark as done 
+
+Pharmacist get the prescription 
+GET appointments/<appointment-id>/prescription/<prescription-id> 
+
+
+
+Methods 
+
+POST appointments/ - add list of appoinemnts 
+POST doctors/ - add a new doctor 
+
+GET doctors/?name=XX
+GET appointments/?booked=true - all appointments 
+PATCH appointments/<appointment-id>/
+
+
+
+GET appointments/ - all appointments 
+PATCH appointments/<appointment-id>/ - 
+POST appointments/<appointment-id>/prescription - TODO check  
+
+GET appointments/<appointment-id>/
+
+GET appointments/<appointment-id>/prescription/<prescription-id> 
+
+
+
+Need a DB
+write on app in go 
+configurables 
+
+
+following shows app outline 
+top level show all / avialable views as divs 
+When you exapnd each, and act, it add next levels via react 
+
+Web app
+    Patient View
+        Find Doctor
+            Find Appointment 
+                Book ( add on click)
+    Doctor View
+        List Appoinement 
+            Add prescription and details -> Done 
+
+    Admin View 
+        Add Doctor
+        Add appointment 
+
+
+
+Hnadling CORS proxy
+
+replace proxy in webpackDevServer.config.js 
+
+proxy: { 
+      "/api/**": { 
+        target: 'http://localhost:8080', 
+        secure: false, 
+        pathRewrite: { '^/api': '' }
+      }  
+    },
+
+following two did not work
+webpack. config, after performance
+devServer: { 
+      proxy: { 
+        "/api/**": { 
+          target: 'http://localhost:8080', 
+          secure: false, 
+          pathRewrite: { '^/api': '' }
+        }  
+      }
+   }
+"proxy": "http://localhost:8080",
+
+curl -X PATCH http://localhost:8080/appointments/app002 \
+     -H 'Content-Type: application/json' \
+     -H 'Accept: application/json' \
+     -d '{"appintmentID":"app002", "doctor":null, "patientData":{"name":"Saman", "address":"colombo03", "phoneNumber":"077345678"}}, "prescription":null, "booked":false, "prescriptionID":null, "doctorID":"d01", "patientID":null}'
+'
+
